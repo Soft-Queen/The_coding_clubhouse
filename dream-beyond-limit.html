@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Beyond Limit</title>
+    <script src="/javaScript/main.js" defer></script>
+    <style>
+      body {
+        font-family: "DM Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      .font-display {
+        font-family: "Syne", sans-serif;
+      }
+
+      /* Wavy divider */
+      .wave-divider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+      }
+
+      /* Stat card border-left accent */
+      .stat-card {
+        border-left: 3px solid #3b1fa3;
+      }
+      .stat-card.yellow {
+        border-left-color: #f5c518;
+      }
+
+      /* Floating avatar ring */
+      .avatar-ring {
+        border: 3px solid #c4b5fd;
+        box-shadow: 0 0 0 4px rgba(196, 181, 253, 0.25);
+      }
+      .avatar-ring.active {
+        border-color: #7c3aed;
+        box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.2);
+      }
+
+      /* Slide-in animation */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeUp 0.7s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.22s;
+      }
+      .delay-3 {
+        animation-delay: 0.34s;
+      }
+      .delay-4 {
+        animation-delay: 0.46s;
+      }
+
+      /* Gallery tilt */
+      .gallery-card:nth-child(1) {
+        transform: rotate(-4deg) translateY(10px);
+        z-index: 1;
+      }
+      .gallery-card:nth-child(2) {
+        transform: rotate(-2deg) translateY(4px);
+        z-index: 2;
+      }
+      .gallery-card:nth-child(3) {
+        transform: rotate(0deg);
+        z-index: 5;
+      }
+      .gallery-card:nth-child(4) {
+        transform: rotate(2deg) translateY(4px);
+        z-index: 2;
+      }
+      .gallery-card:nth-child(5) {
+        transform: rotate(4deg) translateY(10px);
+        z-index: 1;
+      }
+      .gallery-card {
+        transition:
+          transform 0.35s ease,
+          z-index 0s;
+      }
+      .gallery-card:hover {
+        transform: rotate(0deg) scale(1.07) translateY(-8px) !important;
+        z-index: 10 !important;
+      }
+
+      /* Quote bubble tail */
+      .quote-bubble::after {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-right-color: #3b1fa3;
+      }
+
+      /* Dotted connector line */
+      .dotted-line {
+        border-top: 2px dashed #c4b5fd;
+      }
+
+      /* Section badge icons */
+      .section-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: #7c3aed;
+      }
+    </style>
+  </head>
+  <body class="bg-brand-white text-brand-charcoal">
+    <div id="app">
+         <div data-include="/components/dreams/hero.html"></div>
+    </div>
+  </body>
+</html>
